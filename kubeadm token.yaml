@@ -1,0 +1,17 @@
+
+
+kubeadm token
+│
+├── create                            # Create a new token for joining nodes to the cluster
+│   ├── --ttl <duration>              # Create a token with a specific TTL (time-to-live)
+│   ├── <token-name>                  # Create a token with a specific name
+│   ├── --uses <number-of-uses>       # Create a token with a specific number of uses
+│   └── --certificate-key <key>       # Create a token with an associated certificate key
+│
+├── list                              # List all active tokens in the cluster
+│
+├── delete <token-id>                 # Delete a specific token from the cluster
+│
+└── --print-join-command              # Get the full join command for adding nodes to the cluster
+
+
