@@ -1,0 +1,35 @@
+kubeadm token
+│
+├── create                              # Create a new token for joining nodes to the cluster
+│   ├── --ttl <duration>                # Create a token with a specific TTL (time-to-live)
+│   │   └── Example: 
+│   │       kubeadm token create --ttl 24h
+│   │       # Creates a token that expires after 24 hours
+│   ├── <token-name>                    # Create a token with a specific name
+│   │   └── Example:
+│   │       kubeadm token create mytoken123
+│   │       # Creates a token with the name 'mytoken123'
+│   ├── --uses <number-of-uses>         # Create a token with a specific number of uses
+│   │   └── Example: 
+│   │       kubeadm token create --uses 1
+│   │       # Creates a token that can only be used once
+│   ├── --certificate-key <key>         # Create a token with an associated certificate key
+│   │   └── Example:
+│   │       kubeadm token create --certificate-key my-cert-key
+│   │       # Creates a token with the certificate key 'my-cert-key'
+│   └── --print-join-command            # Get the full join command for adding nodes to the cluster
+│       └── Example:
+│           kubeadm token create --print-join-command
+│           # Outputs the join command to add a node, including the token
+│
+├── list                                # List all active tokens in the cluster
+│   └── Example:
+│       kubeadm token list
+│       # Lists all active tokens and their details (expiration, uses)
+│
+├── delete <token-id>                   # Delete a specific token from the cluster
+│   └── Example:
+│       kubeadm token delete mytoken123
+│       # Deletes the token named 'mytoken123'
+│
+└── <other commands>                    # Other possible subcommands related to tokens
